@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root prefHeight="347.0" prefWidth="293.0" style="-fx-background-color: black;" type="AnchorPane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="352.0" fitWidth="294.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/background.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="cpsLabel" layoutX="114.0" layoutY="309.0" prefHeight="28.0" prefWidth="69.0" text="CPS : 1" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Slider fx:id="cpsSlider" blockIncrement="1.0" layoutX="8.0" layoutY="259.0" majorTickUnit="1.0" min="1.0" minorTickCount="1" prefHeight="40.0" prefWidth="280.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-background-color: white;" value="1.0" />
+      <HBox alignment="CENTER" layoutY="4.0" prefHeight="28.0" prefWidth="294.0" spacing="10.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#handleEmpty" selected="true" text="Empty" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="clickGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="leftRadio" mnemonicParsing="false" onAction="#handleLeft" text="Left" textAlignment="CENTER" textFill="WHITE" toggleGroup="$clickGroup">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="rightRadio" mnemonicParsing="false" onAction="#handleRight" text="Right" textFill="#e0e0e4" toggleGroup="$clickGroup">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </HBox>
+      <HBox alignment="BASELINE_CENTER" layoutX="9.0" layoutY="44.0" prefHeight="28.0" prefWidth="280.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="111.0" text="Touche Autoclick" textAlignment="CENTER" textFill="WHITE" underline="true" />
+            <ComboBox fx:id="autoClickSelector" prefHeight="26.0" prefWidth="111.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutY="86.0" prefHeight="28.0" prefWidth="294.0" spacing="5.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="131.0" text="Touche AutoMaintien" textFill="WHITE" underline="true" />
+            <ComboBox fx:id="holdClickSelector" prefHeight="26.0" prefWidth="107.0" />
+         </children>
+      </HBox>
+   </children>
+</fx:root>
